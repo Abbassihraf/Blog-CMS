@@ -43,5 +43,68 @@
     </nav>
   </header>
   <!-- // header -->
+
+   <!-- Posts Slider -->
+   <div class="posts-slider">
+      <h1 class="slider-title">Trending Posts</h1>
+      <i class="fa fa-chevron-right next"></i>
+      <i class="fa fa-chevron-left prev"></i>
+      <div class="posts-wrapper">
+        <div class="post">
+          <div class="inner-post">
+            <img src="assets/images/image_7.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+            <div class="post-info">
+              <h4><a href="single.php">One day your life will flash before your eyes</a></h3>
+                <div>
+                  <i class="fa fa-user-o"></i> Awa Melvine
+                  &nbsp;
+                  <i class="fa fa-calendar"></i> Jan 18, 2019
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="post">
+          <div class="inner-post">
+            <img src="assets/images/image_6.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+            <div class="post-info">
+              <h4><a href="single.php">One day your life will flash before your eyes</a></h3>
+                <div>
+                  <i class="fa fa-user-o"></i> Awa Melvine
+                  &nbsp;
+                  <i class="fa fa-calendar"></i> Jan 18, 2019
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="post">
+          <div class="inner-post">
+            <img src="assets/images/image_5.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+            <div class="post-info">
+              <h4><a href="single.php">One day your life will flash before your eyes</a></h3>
+                <div>
+                  <i class="fa fa-user-o"></i> Awa Melvine
+                  &nbsp;
+                  <i class="fa fa-calendar"></i> Jan 18, 2019
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="post">
+          <div class="inner-post">
+            <img src="assets/images/image_4.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+            <div class="post-info">
+              <h4><a href="single.php">One day your life will flash before your eyes</a></h4>
+              <div>
+                <i class="fa fa-user-o"></i> Awa Melvine
+                &nbsp;
+                <i class="fa fa-calendar"></i> Jan 18, 2019
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- // Posts Slider -->
+
 </body>
 </html>
