@@ -112,7 +112,7 @@
       <div class="page-content">
         <h1 class="recent-posts-title">Recent Posts</h1>
         <div class="post clearfix">
-          <img src="images/image_1.png" class="post-image" alt="">
+          <img src="assets/images/image_1.png" class="post-image" alt="">
           <div class="post-content">
             <h2 class="post-title"><a href="#">The strongest and sweetest songs yet remain to be sung</a></h2>
             <div class="post-info">
@@ -127,7 +127,7 @@
           </div>
         </div>
         <div class="post clearfix">
-          <img src="images/image_2.png" class="post-image" alt="">
+          <img src="assets/images/image_2.png" class="post-image" alt="">
           <div class="post-content">
             <h2 class="post-title"><a href="#">That love is all there is, is all we know of love</h2></a>
             <div class="post-info">
@@ -142,7 +142,7 @@
           </div>
         </div>
         <div class="post clearfix">
-          <img src="images/image_3.png" class="post-image" alt="">
+          <img src="assets/images/image_3.png" class="post-image" alt="">
           <div class="post-content">
             <h2 class="post-title"><a href="#">Do anything, but let it produce joy</a></h2>
             <div class="post-info">
