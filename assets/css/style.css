@@ -280,3 +280,167 @@ header nav ul .userinfo i.fa-chevron-down {
     padding: 5px 10px;
   }
   
+
+  /* CONTENT */
+
+.content {
+    width: 90%;
+    margin: 40px auto 140px;
+  }
+  
+  .content .page-content {
+    width: 70%;
+    margin: 0px auto;
+    float: left;
+  }
+  
+  .content .page-content.single {
+    margin-right: 10px;
+    background: white;
+    padding: 20px 50px;
+    box-sizing: border-box;
+    font-size: 1.1em;
+    border-radius: 5px;
+  }
+  
+  .content .sidebar {
+    width: 28%;
+    float: left;
+    margin: 78px auto;
+  }
+  
+  .content .sidebar.single {
+    margin: 0px auto;
+  }
+  
+  .content .sidebar .search-div {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .content .sidebar .section {
+    background: #ffffff;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  
+  .content .sidebar .section.topics ul {
+    list-style-type: none;
+    padding: 0px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .content .sidebar .section.topics ul a {
+    display: block;
+    padding: 15px;
+    border-top: 1px solid #e0e0e0;
+    transition: all .3s;
+  }
+  
+  .content .sidebar .section.topics ul a:hover {
+    padding-left: 25px;
+    transition: all .3s;
+  }
+  
+  .content .sidebar .section.popular .post {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+  
+  .content .sidebar .section.popular .post .title {
+    width: 80%;
+  }
+  
+  .content .sidebar .section.popular .post img {
+    width: 60px;
+    height: 60px;
+    float: left;
+    margin-right: 10px;
+  }
+  
+  .content .page-content .post {
+    border-radius: 5px;
+    height: 260px;
+    width: 96%;
+    margin: 0px auto 30px;
+    background: #fff;
+  }
+  
+  .content .page-content .post .post-content {
+    width: 62.88%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    padding: 5px 15px;
+    float: left;
+  }
+  
+  .content .page-content .post .post-title {
+    margin: 5px 0px;
+  }
+  
+  .content .page-content .recent-posts-title {
+    margin: 20px;
+  }
+  
+  .content .page-content .post .read-more {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    border: 1px solid #8BC7C9;
+    padding: 8px 15px;
+    border-radius: 0px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
+  
+  .content .page-content .post .read-more:hover {
+    color: white;
+    background: #008489;
+    border: 1px solid #008489;
+    transition: .5s;
+  }
+  
+  .content .page-content .post .post-body {
+    line-height: 1.7em;
+    font-size: 1.03em;
+    color: #444;
+  }
+  
+  .content .page-content .post .post-image {
+    width: 37%;
+    height: inherit;
+    float: left;
+  }
+  
+  .content .page-content .post .post-info {
+    color: #757575;
+    font-size: 0.8em;
+  }
+  
+  .auth-content {
+    width: 30%;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+  }
+  
+  .auth-content .form-title {
+    text-align: center;
+  }
+  
+  .auth-content .auth-nav {
+    margin: 5px auto;
+    text-align: center;
+    font-size: 1em;
+  }
+  
+  .auth-content .auth-nav a {
+    text-decoration: underline;
+  }
