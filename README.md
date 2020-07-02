@@ -1,7 +1,7 @@
 # Blog-CMS
 
 ## Contexte
-Le blog informatif a été développé pour créer un réseau personnel d'informations où une personne peut facilement consulter les informations ; il s'agit simplement d'un blog personnel utile pour publier des contenus au jour le jour.
+ Le blog informatif a été développé pour créer un réseau personnel d'informations où une personne peut facilement consulter les informations ; il s'agit simplement d'un blog personnel utile pour publier des contenus au jour le jour.
 Un blog informatif n'est pas limité aux seuls blogs personnels. Il peut être utilisé comme un tableau d'affichage en ligne ou un avis informatif dans une entreprise / un collège afin que les autorités puissent afficher le contenu et que les membres de l'organisation et les étudiants, les enseignants du collège puissent consulter les informations avec des détails.
 
 Cette application web est entièrement fonctionnelle et l'objectif principal de ce projet est de créer un portail où les utilisateurs peuvent consulter les informations et où il n'y a pas d'authentification pour les utilisateurs pour s'inscrire ou se connecter pour voir le contenu. Il suffit de visualiser le contenu et les informations présentes. En cas de problème concernant l'avis/le contenu, vous pouvez remplir le simple formulaire de contact qui sera envoyé à l'administration. La principale fonctionnalité est celle de l'administrateur qui gère le contenu du site web.
