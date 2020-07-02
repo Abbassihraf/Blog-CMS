@@ -49,5 +49,37 @@
     </nav>
   </header>
   <!-- // header -->
+
+<!-- Login -->
+  <div class="login-box">
+  <h2>Login</h2>
+  <form>
+    <div class="user-box">
+      <input type="text" name="username" required="">
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="password" required="">
+      <label>Password</label>
+    </div>
+    <a type="submit" name="login-btn" class="submit" href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Login
+    </a>
+    <p>Or <a href="register.php">  Sign Up</a></p>
+  </form>
+
+
+<!-- // Login -->
+
+  <!-- JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="assets/js/script.js"></script>
+
+
 </body>
 </html>
