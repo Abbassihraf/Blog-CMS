@@ -36,7 +36,8 @@
       <span></span>
       Login
     </a>
-    <p>Or <a href="register.php">  Sign Up</a></p>
+    <p>Or <a href="<?php echo BASE_URL . '/register.php'?>">  Sign Up</a></p>
+    
   </form>
 
 
