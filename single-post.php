@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<?php include(ROOT__PATH . "/app/includes/header.php"); ?>
+<?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
   <!-- Page wrapper -->
   <div class="page-wrapper">

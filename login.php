@@ -15,7 +15,7 @@
 <body>
     
 
-<?php include(ROOT__PATH . "/app/includes/header.php"); ?>
+<?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
 <!-- Login -->
   <div class="login-box">
