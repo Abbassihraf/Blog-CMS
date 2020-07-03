@@ -1,3 +1,4 @@
+<?php include("path.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,7 @@
 <body>
     
 
-<?php include("app/includes/header.php"); ?>
+<?php include(ROOT__PATH . "/app/includes/header.php"); ?>
 
 <!-- Login -->
   <div class="login-box">

@@ -1,3 +1,4 @@
+<?php include("path.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,7 @@
 
 
 
-<?php include("app/includes/header.php"); ?>
+<?php include(ROOT__PATH . "/app/includes/header.php"); ?>
 
 
 
