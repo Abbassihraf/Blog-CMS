@@ -8,16 +8,37 @@ function dd($value){
 }
 
 
-function selectAll($table) {
+function selectAll($table, $conditions =[]) {
     global $conn;
     $sql = "SELECT * FROM $table";
-    $stmt = $conn -> prepare($sql);
-    $stmt -> execute();
-    $records = $stmt -> get_result() -> fetch_all(MYSQLI_ASSOC);
-    return $records;
+    if(empty($conditions)){
+        $stmt = $conn -> prepare($sql);
+        $stmt -> execute();
+        $records = $stmt -> get_result() -> fetch_all(MYSQLI_ASSOC);
+        return $records;
+    }
+    else{
+        // $sql = "SELECT * FROM $table WHERE username='Achraf' AND admin=1";  
+        $i = 0;
+        foreach ($conditions as $key => $value){
+            if($i ===0){
+                $sql = $sql . " WHERE $key=$value";
+            }
+            else{
+                $sql = $sql . " AND $key=$value";
+            }
+            $i++;
+        }
+        dd($sql);
+    }
+
 
 }
 
+$conditions= [
+    'admin' => 1,
+    'username' => 'Achraf'
+];
 
-$users = selectAll('users');
+$users = selectAll('users', $conditions);
 dd($users);
