@@ -8,6 +8,16 @@ function dd($value){
 }
 
 
+function executeQuery($sql, $data){
+    global $con;
+    $stmt = $con -> prepare($sql);
+    $values= array_values($data);
+    $types =str_repeat('s', count($values));
+    $stmt -> bind_param($types, ...$values);
+    $stmt -> execute();
+    return $stmt;
+}
+
 function selectAll($table, $conditions =[]) {
     global $con;
     $sql = "SELECT * FROM $table";
@@ -30,14 +40,34 @@ function selectAll($table, $conditions =[]) {
             $i++;
         }
  
-        $stmt = $con -> prepare($sql);
-        $values= array_values($conditions);
-        $types =str_repeat('s', count($values));
-        $stmt -> bind_param($types, ...$values);
-        $stmt -> execute();
+        $stmt =  executeQuery($sql, $conditions);
         $records = $stmt -> get_result() -> fetch_all(MYSQLI_ASSOC);
         return $records;
     }
+}
+
+
+
+function selectOne($table, $conditions) {
+    global $con;
+    $sql = "SELECT * FROM $table";
+
+        // $sql = "SELECT * FROM $table WHERE username='Achraf' AND admin=1";  
+        $i = 0;
+        foreach ($conditions as $key => $value){
+            if($i ===0){
+                $sql = $sql . " WHERE $key=?";
+            }
+            else{
+                $sql = $sql . " AND $key=?";
+            }
+            $i++;
+        }
+
+        $sql = $sql . " LIMIT 1";
+        $stmt =  executeQuery($sql, $conditions);
+        $records = $stmt -> get_result() -> fetch_assoc();
+        return $records;
 }
 
 $conditions= [
@@ -45,6 +75,6 @@ $conditions= [
     'username' => 'Achraf'
 ];
 
-$users = selectAll('users', $conditions);
+$users = selectOne('users', $conditions);
 dd($users);
 
