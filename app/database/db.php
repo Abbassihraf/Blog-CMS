@@ -9,10 +9,10 @@ function dd($value){
 
 
 function selectAll($table, $conditions =[]) {
-    global $conn;
+    global $con;
     $sql = "SELECT * FROM $table";
     if(empty($conditions)){
-        $stmt = $conn -> prepare($sql);
+        $stmt = $con -> prepare($sql);
         $stmt -> execute();
         $records = $stmt -> get_result() -> fetch_all(MYSQLI_ASSOC);
         return $records;
@@ -22,23 +22,29 @@ function selectAll($table, $conditions =[]) {
         $i = 0;
         foreach ($conditions as $key => $value){
             if($i ===0){
-                $sql = $sql . " WHERE $key=$value";
+                $sql = $sql . " WHERE $key=?";
             }
             else{
-                $sql = $sql . " AND $key=$value";
+                $sql = $sql . " AND $key=?";
             }
             $i++;
         }
-        dd($sql);
+ 
+        $stmt = $con -> prepare($sql);
+        $values= array_values($conditions);
+        $types =str_repeat('s', count($values));
+        $stmt -> bind_param($types, ...$values);
+        $stmt -> execute();
+        $records = $stmt -> get_result() -> fetch_all(MYSQLI_ASSOC);
+        return $records;
     }
-
-
 }
 
 $conditions= [
-    'admin' => 1,
+    'admin' => 0,
     'username' => 'Achraf'
 ];
 
 $users = selectAll('users', $conditions);
 dd($users);
+
