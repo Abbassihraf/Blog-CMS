@@ -1,4 +1,6 @@
-<?php include("path.php"); ?>
+<?php include("path.php");
+include(ROOT_PATH . "/app/database/db.php");
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,17 +14,19 @@
 
 
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
+
+
   <!-- Page wrapper -->
   <div class="page-wrapper">
-   <!-- Posts Slider -->
-   <div class="posts-slider">
+    <!-- Posts Slider -->
+    <div class="posts-slider">
       <h1 class="slider-title">Trending Posts</h1>
       <i class="fa fa-chevron-right next"></i>
       <i class="fa fa-chevron-left prev"></i>
       <div class="posts-wrapper">
         <div class="post">
           <div class="inner-post">
-            <img src="assets/images/image_7.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+            <img src="images/image_7.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
             <div class="post-info">
               <h4><a href="single.php">One day your life will flash before your eyes</a></h3>
                 <div>
@@ -35,7 +39,7 @@
         </div>
         <div class="post">
           <div class="inner-post">
-            <img src="assets/images/image_6.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+            <img src="images/image_6.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
             <div class="post-info">
               <h4><a href="single.php">One day your life will flash before your eyes</a></h3>
                 <div>
@@ -48,7 +52,7 @@
         </div>
         <div class="post">
           <div class="inner-post">
-            <img src="assets/images/image_5.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+            <img src="images/image_5.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
             <div class="post-info">
               <h4><a href="single.php">One day your life will flash before your eyes</a></h3>
                 <div>
@@ -61,7 +65,7 @@
         </div>
         <div class="post">
           <div class="inner-post">
-            <img src="assets/images/image_4.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+            <img src="images/image_4.png" alt="" style="height: 200px; width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;">
             <div class="post-info">
               <h4><a href="single.php">One day your life will flash before your eyes</a></h4>
               <div>
@@ -75,7 +79,6 @@
       </div>
     </div>
     <!-- // Posts Slider -->
-
     <!-- content -->
     <div class="content clearfix">
       <div class="page-content">
@@ -133,7 +136,7 @@
             <input type="text" name="search-term" class="text-input" placeholder="Search...">
           </form>
         </div>
-        <!-- // Search -->
+        <!-- Search -->
         <!-- topics -->
         <div class="section topics">
           <h2>Topics</h2>
@@ -164,16 +167,15 @@
             </a>
           </ul>
         </div>
-        <!-- // topics -->
+        <!--  topics -->
       </div>
     </div>
-    <!-- // content -->
+    <!--  content -->
   </div>
-  <!-- // page wrapper -->
+  <!--  page wrapper -->
 
-  <!-- FOOTER -->
   <?php include(ROOT_PATH . "/app/includes/footer.php"); ?>
-  <!-- // FOOTER -->
+ 
 
   <!-- JQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
