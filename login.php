@@ -18,27 +18,26 @@
 <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
 
 <!-- Login -->
-  <div class="login-box">
-  <h2>Login</h2>
-  <form>
-    <div class="user-box">
-      <input type="text" name="username" required="">
-      <label>Username</label>
-    </div>
-    <div class="user-box">
-      <input type="password" name="password" required="">
-      <label>Password</label>
-    </div>
-    <a type="submit" name="login-btn" class="submit" href="#">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Login
-    </a>
-    <p>Or <a href="<?php echo BASE_URL . '/register.php'?>">  Sign Up</a></p>
-    
-  </form>
+<div class="auth-content">
+    <form action="login.php" method="post">
+      <h3 class="form-title">Login</h3>
+      <!-- <div class="msg error">
+        <li>Username required</li>
+      </div> -->
+      <div>
+        <label>Username</label>
+        <input type="text" name="username" class="text-input">
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" name="password" class="text-input">
+      </div>
+      <div>
+        <button type="submit" name="login-btn" class="btn">Login</button>
+      </div>
+      <p class="auth-nav">Or <a href="register.php">Sign Up</a></p>
+    </form>
+  </div>
 
 
 <!-- // Login -->
