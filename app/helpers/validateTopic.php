@@ -7,7 +7,7 @@ function validateTopic($topic){
         array_push($errors, 'Name is required');
     }
 
-   $existingTopic = selectOne('topics', ['email' => $user['email']]);
+   $existingTopic = selectOne('topics', ['name' => $topic['name']]);
    if (isset($existingTopic)){
        array_push($errors, 'Name already exists');
    }
