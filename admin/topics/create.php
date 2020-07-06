@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
   <!-- Custom Styles -->
   <link rel="stylesheet" href="../../assets/css/style.css">
   <!-- Admin Styling -->
@@ -14,30 +14,10 @@
   <title>Admin - Create Topic</title>
 </head>
 <body>
-  <!-- header -->
-  <header class="clearfix">
-    <div class="logo">
-      <!-- <img src="images/logo-placeholder.png" alt="Logo"> -->
-    </div>
-    <div class="fa fa-reorder menu-toggle"></div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li>
-          <a href="#" class="userinfo">
-            <i class="fa fa-user"></i>
-            Awa Melvine
-            <i class="fa fa-chevron-down"></i>
-          </a>
-          <ul class="dropdown">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#" class="logout">logout</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <!-- // header -->
+
+
+
+
   <div class="admin-wrapper clearfix">
     <!-- Left Sidebar -->
     <div class="left-sidebar">
