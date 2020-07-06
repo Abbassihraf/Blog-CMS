@@ -20,9 +20,12 @@
         <i class="fa fa-chevron-down"></i>
     </a>
     <ul class="dropdown">
+
+    <?php if($_SESSION['admin']): ?>
     <li>
-        <a href="admin/posts/index.php">Dashboard</a>
+        <a href="<?php echo BASE_URL . '/admin/dashboard.php' ?>">Dashboard</a>
     </li>
+    <?php endif; ?>
     <li>
         <a href="#" class="logout">logout</a>
     </li>
@@ -30,8 +33,8 @@
 </li>
 <?php else: ?>
 
-<li><a href="register.php">Sign up</a></li>
-<li><a href="login.php"><i class="fa fa-sign-in"></i>Login</a></li>
+<li><a href="<?php echo BASE_URL . '/register.php' ?>">Sign up</a></li>
+<li><a href="<?php echo BASE_URL . '/login.php' ?>"><i class="fa fa-sign-in"></i>Login</a></li>
 <?php endif; ?>
       </ul>
     </nav>
