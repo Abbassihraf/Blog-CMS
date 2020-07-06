@@ -1,3 +1,5 @@
+<?php include("../../path.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,17 +19,10 @@
 
 
 
-
+<?php include(ROOT_PATH . "/app/includes/adminHeader.php"); ?>
   <div class="admin-wrapper clearfix">
-    <!-- Left Sidebar -->
-    <div class="left-sidebar">
-      <ul>
-        <li><a href="../posts/index.php">Manage Posts</a></li>
-        <li><a href="../topics/index.php">Manage Topics</a></li>
-        <li><a href="../users/index.php">Manage Users</a></li>
-      </ul>
-    </div>
-    <!-- // Left Sidebar -->
+
+  <?php include(ROOT_PATH . "/app/includes/adminSidebar.php"); ?>
     <!-- Admin Content -->
     <div class="admin-content clearfix">
       <div class="button-group">
