@@ -25,32 +25,35 @@
 <!-- Login -->
 <div class="auth-content">
     <form action="register.php" method="post">
-      <h3 class="form-title">Register</h3>
-      <!-- <div class="msg error">
-        <li>Username required</li>
-      </div> -->
-      <div>
-        <label>Username</label>
-        <input type="text" name="username" class="text-input">
-      </div>
-      <div>
-        <label>Email</label>
-        <input type="email" name="email" class="text-input">
-      </div>
-      <div>
-        <label>Password</label>
-        <input type="password" name="password" class="text-input">
-      </div>
-      <div>
-        <label>Confirm Password</label>
-        <input type="password" name="passwordConf" class="text-input">
-      </div>
-      <div>
-        <button type="submit" name="register-btn" class="btn">Register</button>
-      </div>
-      <p class="auth-nav">Or <a href="<?php echo BASE_URL . '/login.php' ?>">Sign In</a></p>
+        <h3 class="form-title">Register</h3>
+
+        <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
+
+        <div>
+
+            <label>Username</label>
+            <input type="text" name="username" class="text-input" value= "<?php echo $username; ?>">
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="email" name="email" class="text-input" value= "<?php echo $email; ?>">
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" name="password" class="text-input" value= "<?php echo $password; ?>">
+        </div>
+        <div>
+            <label>Confirm Password</label>
+            <input type="password" name="passwordConf" class="text-input" value= "<?php echo $passwordConf; ?>">
+        </div>
+        <div>
+            <button type="submit" name="register-btn" class="btn">Register</button>
+        </div>
+        <p class="auth-nav">Or
+            <a href="<?php echo BASE_URL . '/login.php' ?>">Sign In</a>
+        </p>
     </form>
-  </div>
+</div>
 
 
 <!-- // Login -->
