@@ -73,7 +73,7 @@ function selectOne($table, $conditions) {
 
 function create($table, $data){
     global $conn;
-    $sql = "INSERT INTO users SET ";
+    $sql = "INSERT INTO $table SET ";
 
     $i = 0;
     foreach ($data as $key => $value){
@@ -93,15 +93,44 @@ function create($table, $data){
 
 }
 
+function update($table, $id, $data){
+    global $conn;
+    $sql = "UPDATE $table SET ";
 
-$data= [
-    'username' => 'Achraf',
-    'admin' => 1,
-    'email' => 'hraf.abbassi@gmail.com',
-    'password' => 'achraf'
+    $i = 0;
+    foreach ($data as $key => $value){
+        if($i ===0){
+            $sql = $sql . " $key=?";
+        }
+        else{
+            $sql = $sql . ", $key=?";
+        }
+        $i++;
+    }
+
+    $sql = $sql . " WHERE id=?";
+    $data['id'] = $id;
+    $stmt = executeQuery($sql, $data);
+    return $stmt->affected_rows;
+
+
+}
+
+function delete($table, $id){
+    global $conn;
+    $sql = "DELETE FROM $table WHERE id=?";
     
-];
+    $stmt = executeQuery($sql, ['id' => $id]);
+    return $stmt->affected_rows;
 
-$id = create('users', $data);
+
+}
+
+
+
+
+
+
+$id = delete('users', 1);
 dd($id);
 
