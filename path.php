@@ -1,5 +1,6 @@
 <?php
-define("ROOT_PATH", $_SERVER["DOCUMENT_ROOT"] . "/BLOG-CMS/"); 
-// var_dump(ROOT_PATH);
-define("BASE_URL","http://localhost:3000/"); 
+
+define("ROOT_PATH", realpath(dirname(__FILE__)));
+define("BASE_URL", "http://localhost/Blog-CMS");
+
 ?>
