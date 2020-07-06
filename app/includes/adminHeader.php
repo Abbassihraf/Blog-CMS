@@ -1,7 +1,7 @@
 <header class="clearfix">
-    <div class="logo">
-      <!-- <img src="images/logo-placeholder.png" alt="Logo"> -->
-    </div>
+    <a href="<?php echo BASE_URL . '/index.php'; ?>" class="logo">
+    <h1 class="logo-text"><span>Ach</span>raf</h1>
+    </a>
     <div class="fa fa-reorder menu-toggle"></div>
     <nav>
       <ul>
