@@ -20,34 +20,34 @@
 
 
 <!-- Login -->
-<div class="login-box">
-  <h2>Login</h2>
-  <form>
-    <div class="user-box">
-      <input type="text" name="username" required="">
-      <label>Username</label>
-    </div>
-    <div class="user-box">
-      <input type="email" name="email" required="">
-      <label>Email</label>
-    </div>
-    <div class="user-box">
-      <input type="password" name="password" required="">
-      <label>Password</label>
-    </div>
-    <div class="user-box">
-      <input type="password" name="passwordConf" required="">
-      <label>Confirm Password</label>
-    </div>
-    <a type="submit" name="login-btn" class="submit" href="#">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Login
-    </a>
-    <p>Or <a href="<?php echo BASE_URL . '/login.php'?>">Sign In</a></p>
-  </form>
+<div class="auth-content">
+    <form action="register.php" method="post">
+      <h3 class="form-title">Register</h3>
+      <!-- <div class="msg error">
+        <li>Username required</li>
+      </div> -->
+      <div>
+        <label>Username</label>
+        <input type="text" name="username" class="text-input">
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" name="email" class="text-input">
+      </div>
+      <div>
+        <label>Password</label>
+        <input type="password" name="password" class="text-input">
+      </div>
+      <div>
+        <label>Confirm Password</label>
+        <input type="password" name="passwordConf" class="text-input">
+      </div>
+      <div>
+        <button type="submit" name="register-btn" class="btn">Register</button>
+      </div>
+      <p class="auth-nav">Or <a href="login.php">Sign In</a></p>
+    </form>
+  </div>
 
 
 <!-- // Login -->
