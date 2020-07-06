@@ -6,10 +6,10 @@ $pass= '';
 $db_name = 'blog';
 
 
-$con =  mysqli_connect($host, $user, $pass, $db_name);
+$conn =  mysqli_connect($host, $user, $pass, $db_name);
 
 
-if ($con->connect_error){
+if ($conn->connect_error){
     die('Database connection error: ' . $conn->connect_error);
 }
 

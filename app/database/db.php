@@ -9,8 +9,8 @@ function dd($value){
 
 
 function executeQuery($sql, $data){
-    global $con;
-    $stmt = $con -> prepare($sql);
+    global $conn;
+    $stmt = $conn -> prepare($sql);
     $values= array_values($data);
     $types =str_repeat('s', count($values));
     $stmt -> bind_param($types, ...$values);
@@ -19,10 +19,10 @@ function executeQuery($sql, $data){
 }
 
 function selectAll($table, $conditions =[]) {
-    global $con;
+    global $conn;
     $sql = "SELECT * FROM $table";
     if(empty($conditions)){
-        $stmt = $con -> prepare($sql);
+        $stmt = $conn -> prepare($sql);
         $stmt -> execute();
         $records = $stmt -> get_result() -> fetch_all(MYSQLI_ASSOC);
         return $records;
@@ -49,7 +49,7 @@ function selectAll($table, $conditions =[]) {
 
 
 function selectOne($table, $conditions) {
-    global $con;
+    global $conn;
     $sql = "SELECT * FROM $table";
 
         // $sql = "SELECT * FROM $table WHERE username='Achraf' AND admin=1";  
@@ -70,11 +70,38 @@ function selectOne($table, $conditions) {
         return $records;
 }
 
-$conditions= [
-    'admin' => 0,
-    'username' => 'Achraf'
+
+function create($table, $data){
+    global $conn;
+    $sql = "INSERT INTO users SET ";
+
+    $i = 0;
+    foreach ($data as $key => $value){
+        if($i ===0){
+            $sql = $sql . " $key=?";
+        }
+        else{
+            $sql = $sql . ", $key=?";
+        }
+        $i++;
+    }
+    
+    $stmt = executeQuery($sql, $data);
+    $id = $stmt ->insert_id;
+    return $id;
+
+
+}
+
+
+$data= [
+    'username' => 'Achraf',
+    'admin' => 1,
+    'email' => 'hraf.abbassi@gmail.com',
+    'password' => 'achraf'
+    
 ];
 
-$users = selectOne('users', $conditions);
-dd($users);
+$id = create('users', $data);
+dd($id);
 
