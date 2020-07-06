@@ -27,7 +27,7 @@
     </li>
     <?php endif; ?>
     <li>
-        <a href="#" class="logout">logout</a>
+        <a href="<?php echo BASE_URL . '/logout.php' ?>" class="logout">logout</a>
     </li>
 </ul>
 </li>
