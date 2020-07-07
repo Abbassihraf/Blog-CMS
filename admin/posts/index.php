@@ -32,6 +32,8 @@
       </div>
       <div class="">
         <h2 style="text-align: center;">Manage Posts</h2>
+
+      <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
         <table>
           <thead>
             <th>N</th>

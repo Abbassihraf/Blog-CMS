@@ -32,14 +32,18 @@
       </div>
       <div class="">
         <h2 style="text-align: center;">Create Post</h2>
+
+        <?php include(ROOT_PATH . "/app/helpers/formErrors.php"); ?>
+
+
         <form action="create.php" method="post">
           <div class="input-group">
             <label>Title</label>
-            <input type="text" name="title" class="text-input">
+            <input type="text" name="title" value ="<?php echo $title ?>" class="text-input">
           </div>
           <div class="input-group">
             <label>Body</label>
-            <textarea class="text-input" name="body" id="body"></textarea>
+            <textarea class="text-input" name="body" value ="<?php echo $body ?>" id="body"></textarea>
           </div>
           <div class="input-group">
             <label>Image</label>
@@ -50,7 +54,11 @@
             <select class="text-input" name="topic_id">
               <option value=""></option>
               <?php foreach ($topics as $key => $topic) : ?>
-                <option value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
+                <?php if (!empty($topic_id) && $topic_id == $topic['id']) : ?>
+                  <option selected value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
+                <?php else: ?>
+                  <option  value="<?php echo $topic['id'] ?>"><?php echo $topic['name'] ?></option>
+                <?php endif; ?>
               <?php endforeach; ?>
 
 
@@ -58,7 +66,7 @@
           </div>
           <div class="input-group">
             <label>
-              <input type="checkbox" name="publish" /> Publish
+              <input type="checkbox" name="published" /> Publish
             </label>
           </div>
           <div class="input-group">
