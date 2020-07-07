@@ -1,5 +1,5 @@
 <?php include("../../path.php"); ?>
-<?php include(ROOT_PATH . "/app/controllers/posts.php");?>
+<?php include(ROOT_PATH . "/app/controllers/users.php");?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,31 +35,30 @@
         <h2 style="text-align: center;">Manage Users</h2>
 
         <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
-        <table>
-          <thead>
-            <th>N</th>
-            <th>Username</th>
-            <th colspan="3">Action</th>
-          </thead>
-          <tbody>
-            <tr class="rec">
-              <td>1</td>
-              <td>
-                <a href="#">Awa Melvine</a>
-              </td>
-              <td>
-                <a href="edit.php" class="edit">
-                  Edit
-                </a>
-              </td>
-              <td>
-                <a href="#" class="delete">
-                  Delete
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+<table>
+
+    <thead>
+        <th>N</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th colspan="3">Action</th>
+    </thead>
+    <tbody>
+        <?php foreach ($admin_users as $key => $user): ?>
+        <tr class="rec">
+            <td><?php echo $key +1; ?></td>
+            <td><?php echo $user['username']; ?></td>
+            <td><?php echo $user['email']; ?></td>
+            <td>
+                <a href="edit.php?id=<?php echo $user['id']; ?>" class="edit">edit</a>
+            </td>
+            <td>
+                <a href="index.php?delete_id=<?php echo $user['id']; ?> class="delete">delete</a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
       </div>
     </div>
     <!-- // Admin Content -->
