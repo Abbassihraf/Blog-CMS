@@ -1,4 +1,5 @@
 <?php include("../../path.php"); ?>
+<?php include(ROOT_PATH . "/app/controllers/posts.php");?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,6 +33,8 @@
       </div>
       <div class="">
         <h2 style="text-align: center;">Manage Users</h2>
+
+        <?php include(ROOT_PATH . "/app/includes/messages.php"); ?>
         <table>
           <thead>
             <th>N</th>
