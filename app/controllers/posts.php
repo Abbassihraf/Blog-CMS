@@ -1,7 +1,9 @@
 <?php
 
 include(ROOT_PATH . "/app/database/db.php");
+
 include(ROOT_PATH . "/app/helpers/validatePost.php");
+
 
 
 $table = 'posts';
@@ -28,6 +30,7 @@ if(isset($_GET['id'])){
 
 
 if  (isset($_GET['delete_id'])){
+
     $count = delete($table, $_GET['delete_id']);
     $post_id = create($table, $_POST);
     $_SESSION['message'] = "Post deleted successfully";
@@ -38,6 +41,7 @@ if  (isset($_GET['delete_id'])){
 }
 
 if(isset($_GET['published']) && isset($_GET['p_id'])){
+
     $published = $_GET['published'];
     $p_id = $_GET['p_id'];
 
@@ -51,8 +55,7 @@ if(isset($_GET['published']) && isset($_GET['p_id'])){
 }
 
 if (isset($_POST['add-post'])){
-
-    
+    adminOnly();
     $error = validatePost($_POST);
 
     if (!empty($_FILES['image']['name'])){
@@ -99,6 +102,7 @@ if (isset($_POST['add-post'])){
 }
 
 if (isset($_POST['update-post'])) {
+    adminOnly();
 
     $error = validatePost($_POST);
 

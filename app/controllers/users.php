@@ -2,12 +2,13 @@
 
 
 include(ROOT_PATH . "/app/database/db.php");
+
 include(ROOT_PATH . "/app/helpers/validateUser.php");
 
 
 
 $table= 'users';
-$admin_users = selectAll($table, ['admin' => 1]);
+$admin_users = selectAll($table);
 
 $errors= array();
 $id='';
@@ -80,6 +81,7 @@ function loginUser($user){
 
 
  if (isset($_POST['update-user'])){
+    adminOnly();
     $errors= validateUser($_POST);
 
 
@@ -113,7 +115,7 @@ function loginUser($user){
 
      $id =$user['id'];
      $username = $user['username'];
-     $admin = isset($user['admin']) ? 1: 0;
+     $admin = $user['admin'];
      $email = $user['email'];
 
  }

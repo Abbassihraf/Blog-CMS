@@ -4,9 +4,17 @@ include(ROOT_PATH . "/app/controllers/topics.php");
 $post =array();
 $postsTitle = 'Recent Posts';
 
-if (isset($_POST['search-term'])){
-  $postsTitle = "You searched for '" . $_POST['search-term'] . "'";
-  $posts = searchPosts($_POST['search-term']);
+if (isset($_GET['t_id'])) {
+
+    $posts = getPostsByTopicId($_GET['t_id']);
+    $postsTitle = "You searched for posts under '"
+        .$_GET['name']
+        . "'";
+} else if (isset($_POST['search-term'])) {
+    $postsTitle = "You searched for '"
+        .$_POST['search-term']
+        ."'";
+    $posts = searchPosts($_POST['search-term']);
 }
 else{
   $posts = getPublishedPosts();
@@ -17,6 +25,8 @@ else{
 
 
  ?>
+ <?php error_reporting (E_ALL ^ E_NOTICE); ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -56,11 +66,12 @@ else{
                                 style="height: 200px; width: 100%; border-top-left-radius: 4px; border-top-right-radius: 4px;">
                             <div class="post-info">
                                 <h4>
-                                    <a href="single-post.php"><?php echo $post ['title']; ?></a>
+                                    <a href="single-post.php?id=<?php echo $post['id']; ?>"><?php echo $post ['title']; ?></a>
                                 </h3>
                                 <div>
                                     <i class="fa fa-user-o"></i>
-                                    <?php echo $post['username']; ?> &nbsp;
+                                    <?php echo $post['username']; ?>
+                                    &nbsp;
                                     <i class="fa fa-calendar"></i>
                                     <?php echo date('F j. Y' , strtotime($post['create_at'])); ?>
                                 </div>
@@ -96,7 +107,9 @@ else{
                                 <h2 class="card-title"><?php echo $post ['title']; ?></h2>
                             </a>
                             <p class="card-text"><?php echo html_entity_decode( substr($post['body'], 0, 150) . '...') ?></p>
-                            <a href="single-post.php" class="btn btn-primary">Read More &rarr;</a>
+                            <a
+                                href="single-post.php.php?id=<?php echo $post ['id']; ?>"
+                                class="btn btn-primary">Read More &rarr;</a>
                         </div>
                         <div class="card-footer text-muted">
                             Posted on
@@ -113,29 +126,23 @@ else{
                 <div class="col-md-4">
 
                     <!-- Search Widget -->
-                    <!-- <div class="card my-4">
-                        <h5 class="card-header">Search</h5>
-                        <div class="card-body">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                                <span class="input-group-append">
-                                    <button class="btn btn-secondary" type="button">Go!</button>
-                                </span>
-                            </div>
-                        </div>
-                    </div> -->
+                    <!-- <div class="card my-4"> <h5 class="card-header">Search</h5> <div
+                    class="card-body"> <div class="input-group"> <input type="text"
+                    class="form-control" placeholder="Search for..."> <span
+                    class="input-group-append"> <button class="btn btn-secondary"
+                    type="button">Go!</button> </span> </div> </div> </div> -->
 
                     <!-- Search -->
-<div class="search-div">
+                    <div class="search-div">
 
-    <form action="index.php" method="post">
-        <input
-            type="text"
-            name="search-term"
-            class="text-input"
-            placeholder="Search..."></form>
-    </div>
-        <!-- // Search -->
+                        <form action="index.php" method="post">
+                            <input
+                                type="text"
+                                name="search-term"
+                                class="text-input"
+                                placeholder="Search..."></form>
+                    </div>
+                    <!-- // Search -->
 
                     <!-- Categories Widget -->
                     <div class="card my-4">
@@ -145,9 +152,10 @@ else{
                                 <div class="col-lg-6">
                                     <ul class="list-unstyled mb-0">
                                         <?php foreach ($topics as $key => $topic): ?>
-                                        <li>
-                                            <a href="#"><?php echo $topic ['name']; ?></a>
-                                        </li>
+                                        <a
+                                            href="<?php echo BASE_URL . '/index.php?t_id=' . $topic['id'] . '$name=' . $topic['name'] ?>">
+                                            <li><?php echo $topic['name']; ?></li>
+                                        </a>
                                         <?php endforeach; ?>
                                     </ul>
                                 </div>
